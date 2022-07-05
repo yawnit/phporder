@@ -71,11 +71,13 @@ class OrderController extends Controller
 
     public static function orders(Request $request)  {
 
-        if (empty($request->phone)) {
-            $orders = DB::table('order')->get();
-        } else {
-            $orders = DB::table('order')->where('phone', $request->phone)->get();
-        }
+        // if (empty($request->phone)) {
+        //     $orders = DB::table('order')->get();
+        // } else {
+        //     $orders = DB::table('order')->where('phone', $request->phone)->get();
+        // }
+
+        $orders = empty($request->phone) ? DB::table('order')->get(): DB::table('order')->where('phone', $request->phone)->get();
         
         return response()->json(['status'=>true, 'orders' => $orders]);
 
