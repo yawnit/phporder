@@ -77,7 +77,7 @@ class OrderController extends Controller
         //     $orders = DB::table('order')->where('phone', $request->phone)->get();
         // }
 
-        $orders = empty($request->phone) ? DB::table('order')->get(): DB::table('order')->where('phone', $request->phone)->get();
+        $orders = empty($request->phone) ? DB::table('order')->get() : DB::table('order')->where('phone', $request->phone)->get();
         
         return response()->json(['status'=>true, 'orders' => $orders]);
 
