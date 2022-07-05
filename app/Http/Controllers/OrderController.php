@@ -69,7 +69,7 @@ class OrderController extends Controller
 
     }
 
-    public static function orderId(Request $request)  {
+    public static function orders(Request $request)  {
 
         $request->validate([
             'phone' => 'required|int',
