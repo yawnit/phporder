@@ -68,6 +68,18 @@ class OrderController extends Controller
         return response()->json(['status'=>true, 'order' => $order]);
 
     }
-    
+
+    public static function orderId(Request $request)  {
+
+        $request->validate([
+            'phone' => 'required|int',
+        ]);
+
+        $orders = DB::table('order')->where('phone', $request->phone)->get();
+        
+        return response()->json(['status'=>true, 'orders' => $orders]);
+
+    }
+
 
 }
