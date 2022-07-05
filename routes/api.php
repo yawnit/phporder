@@ -24,8 +24,8 @@ Route::get('/', function () {
 Route::post('/create', [OrderController::class, 'create']);
 Route::post('/edit', [OrderController::class, 'edit']);
 
-Route::get('/orderId', [OrderController::class, 'create']);
-Route::get('/orders', [OrderController::class, 'create']);
+Route::get('/orderId', [OrderController::class, 'orderId']);
+Route::get('/orders', [OrderController::class, 'orders']);
 
 // Вареант 2
 
