@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +21,7 @@ Route::get('/', function () {
 
 // Вареант 1
 
-Route::get('/test',  function  (Request $request)  {
-    return response()->json(['CORS']);
-});
+Route::get('/test', [OrderController::class, 'test']);
 
 // Вареант 2
 
