@@ -57,4 +57,17 @@ class OrderController extends Controller
 
     }
 
+    public static function orderId(Request $request)  {
+
+        $request->validate([
+            'orderId' => 'required|int',
+        ]);
+
+        $order = DB::table('order')->where('id', $request->orderId)->first();
+        
+        return response()->json(['status'=>true, 'order' => $order]);
+
+    }
+    
+
 }
