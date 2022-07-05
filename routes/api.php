@@ -22,6 +22,7 @@ Route::get('/', function () {
 // Вареант 1
 
 Route::get('/test', [OrderController::class, 'test']);
+Route::post('/create', [OrderController::class, 'create']);
 
 // Вареант 2
 
